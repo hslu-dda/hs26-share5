@@ -1,0 +1,55 @@
+/*----------------------------------------*\
+  GLOSSARY
+\*----------------------------------------*/
+
+.glossar-result__list {
+  @apply max-w-[900px];
+}
+
+.glossar-result__title {
+  @apply text-7xl;
+  font-weight: 600;
+  @apply text-text-600;
+  @apply mt-5 mb-2.5 md:mt-10 md:mb-5;
+}
+
+.glossary-results__header {
+  @apply flex flex-wrap gap-4 items-center justify-between;
+  @apply text--sm;
+  @apply pt-4 sm:pt-6 2xl:pt-8;
+  @apply pb-2 sm:pb-3 2xl:pb-4;
+  @apply border-b border-secondary-300;
+
+  strong {
+    @apply block sm:inline mr-[1ex] font-regular;
+  }
+}
+
+.glossary-results__header__left {
+  @apply flex items-stretch;
+}
+
+.glossary-results__header__right {
+  @apply flex ml-auto;
+
+  select {
+    @apply text-right;
+  }
+}
+
+.glossary__filters {
+  @apply pt-5 md:pt-6;
+}
+
+.glossary__filters__drawer-section {
+  @apply mt-2 md:-mt-1;
+}
+
+.glossary__filters__drawer {
+  @apply grid md:grid-cols-2 lg:grid-cols-3;
+  @apply gap-3 lg:gap-4;
+  @apply pt-4 sm:pt-6 2xl:pt-8;
+  @apply pb-2 sm:pb-3 2xl:pb-4;
+  @apply mt-4 sm:mt-6 2xl:mt-8;
+  @apply border-t border-secondary-200;
+}

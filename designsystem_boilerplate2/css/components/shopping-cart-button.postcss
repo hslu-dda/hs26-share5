@@ -1,0 +1,27 @@
+/*----------------------------------------*\
+  Shopping Cart button
+\*----------------------------------------*/
+
+.shopping-cart__button {
+  @apply flex items-center;
+  @apply cursor-pointer;
+}
+
+.shopping-cart__icon-group {
+  @apply relative;
+}
+
+.shopping-cart__button-label {
+  @apply hidden;
+  @screen lg {
+    @apply block;
+    @apply mr-1.5;
+  }
+}
+
+.shopping-cart__icon {
+  @apply !h-9;
+  @screen lg {
+    @apply !h-7;
+  }
+}

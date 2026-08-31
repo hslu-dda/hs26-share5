@@ -1,0 +1,132 @@
+/*----------------------------------------*\
+  SHOPPING CART
+\*----------------------------------------*/
+
+.shopping__cart-title {
+  @apply !mb-[35px];
+}
+
+.shopping__cart-button {
+  @apply mt-4;
+}
+
+.shopping__cart-accordion-content {
+  @apply w-full px-2 pt-4 pb-6;
+}
+
+.shopping__cart-card-list {
+  @apply list-none;
+
+  @screen lg {
+    @apply col-span-3;
+  }
+}
+
+.shopping__cart__action-container {
+  @apply mt-4;
+}
+
+.shopping__cart-container {
+  @apply p-16;
+}
+
+.shopping__cart-confirmation-badge {
+  @apply text-green-600 border-green-600;
+  & svg {
+    @apply fill-current;
+  }
+}
+
+.shopping__cart-confirmation-checkmark {
+  @apply absolute;
+  @apply text-white border-white;
+
+  & svg {
+    @apply fill-current;
+  }
+}
+
+.shopping__cart-confirmation {
+  @apply flex items-center justify-center;
+  @apply relative;
+  @apply w-[48px] h-[48px];
+}
+
+.shopping__cart-confirmation-container {
+  @apply my-60;
+}
+
+.shopping__cart-confirmation-title {
+  @apply mt-[25px];
+}
+
+.shopping__cart-confirmation-action {
+  @apply mt-[30px];
+}
+
+/* Price and order box */
+
+.shopping__cart-order-agreement {
+  @apply mt-[20px];
+}
+
+.shopping__cart-order-overview-container {
+  @screen lg {
+    @apply grid grid-cols-5 gap--responsive;
+  }
+}
+
+.shopping__cart-delivery-summary {
+  @apply mt-5;
+  @screen lg {
+    @apply mt-0;
+    @apply col-span-2;
+  }
+}
+
+.shopping__cart-order-form {
+  @apply mt-4;
+}
+
+.shopping__cart-order-form-input-spacing {
+  @apply mt-4;
+}
+
+.shopping__cart-order-form-fieldset-spacing {
+  @apply mt-6;
+}
+
+.shopping__cart-order-form-delivery-address-title {
+  @apply mt-4;
+  @apply font-bold;
+}
+
+.shopping__cart-order-form-invoice-title {
+  @apply mb-4;
+  @apply font-bold;
+}
+
+.shopping__cart-order-form-notification {
+  @apply mb-8;
+}
+
+.shopping__cart-delivery-address-container {
+  @apply !mt-5;
+}
+
+.shopping__cart-summary-box-title {
+  overflow-wrap: anywhere;
+}
+
+.shopping__cart-order-form-input-group {
+  .form__group__input {
+    @apply mt-4;
+  }
+  @screen md {
+    @apply grid grid-cols-2 gap--responsive;
+  }
+}
+
+.shopping__cart-empty-text {
+  @apply font-bold;
+}

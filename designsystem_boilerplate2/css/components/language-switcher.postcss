@@ -1,0 +1,59 @@
+/*----------------------------------------*\
+  LANGUAGE SWITCHER
+\*----------------------------------------*/
+
+.language-switcher {
+  @apply flex cursor-pointer;
+
+  select {
+    @apply w-[3.5em] lg:w-[4.5em];
+    @apply cursor-pointer;
+    @apply transition-colors;
+    svg {
+      @apply h-6;
+    }
+    @apply pl-1 lg:pl-4;
+  }
+
+  option {
+    &:disabled {
+      @apply text-text-400;
+    }
+  }
+
+  .select__icon {
+    @apply w-6;
+    @apply transition-colors;
+  }
+
+  select:hover + .select__icon,
+  select:focus + .select__icon {
+    @apply text-text-300;
+  }
+}
+
+.top-header__right,
+.language-switcher {
+  .form__group__select,
+  .select {
+    @apply h-full;
+  }
+
+  select {
+    @apply h-full;
+  }
+}
+
+.top-bar {
+  .language-switcher {
+    @apply h-full;
+    .form__group__select,
+    .select {
+      @apply h-full;
+    }
+
+    select {
+      @apply h-full;
+    }
+  }
+}
