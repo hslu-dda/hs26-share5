@@ -2,12 +2,15 @@
  * data.js
  * ---------------------------------------------------------------
  * Liest eine CSV-Datei im Browser ein und wandelt sie in ein Array
- * von JavaScript-Objekten um. Nutzt dafür die Bibliothek PapaParse
- * (window.Papa), die in index.html per <script> eingebunden ist.
+ * von JavaScript-Objekten um. Nutzt dafür d3 (window.d3, per
+ * <script> in index.html eingebunden) – dieselben Funktionen wie
+ * im Beispiel p52.0_loadingData (d3.csv / d3.csvParse).
  *
  * Ergebnis liegt danach in der globalen Variable `tableData`
  * (Array von Objekten, ein Objekt pro CSV-Zeile), z.B.:
- *   [ { valueCategory: "cases", temporal: "2013-M01", value: 171, ... }, ... ]
+ *   [ { valueCategory: "cases", temporal: "2013-M01", value: "171", ... }, ... ]
+ * Achtung: d3 liefert alle Werte als Strings – zahlen müssen bei
+ * Bedarf selbst mit Number(...) umgewandelt werden (siehe sketch.js).
  *
  * Sobald neue Daten geladen wurden, wird die Funktion
  * `onDataLoaded(data)` aufgerufen (siehe sketch.js) – dort kannst
@@ -30,12 +33,9 @@ const valueCategorySelect = document.getElementById('filter-valuecategory');
 fileInput.addEventListener('change', (event) => {
   const file = event.target.files[0];
   if (!file) return;
-  Papa.parse(file, {
-    header: true,
-    dynamicTyping: true,
-    skipEmptyLines: true,
-    complete: (results) => onCsvParsed(results.data, file.name),
-  });
+  const reader = new FileReader();
+  reader.onload = (e) => onCsvParsed(d3.csvParse(e.target.result), file.name);
+  reader.readAsText(file);
 });
 
 /**
@@ -44,21 +44,17 @@ fileInput.addEventListener('change', (event) => {
  * über einen lokalen Server läuft (siehe README.md) – nicht per
  * Doppelklick auf index.html geöffnet (file://).
  */
-function loadCsvFromUrl(url) {
-  Papa.parse(url, {
-    download: true,
-    header: true,
-    dynamicTyping: true,
-    skipEmptyLines: true,
-    complete: (results) => onCsvParsed(results.data, url),
-    error: (err) => {
-      fileStatus.textContent =
-        'Beispieldatei konnte nicht automatisch geladen werden. ' +
-        'Läuft die Seite über einen lokalen Server? Siehe README.md. ' +
-        'Du kannst stattdessen oben manuell eine Datei auswählen.';
-      console.error(err);
-    },
-  });
+async function loadCsvFromUrl(url) {
+  try {
+    const rows = await d3.csv(url);
+    onCsvParsed(rows, url);
+  } catch (err) {
+    fileStatus.textContent =
+      'Beispieldatei konnte nicht automatisch geladen werden. ' +
+      'Läuft die Seite über einen lokalen Server? Siehe README.md. ' +
+      'Du kannst stattdessen oben manuell eine Datei auswählen.';
+    console.error(err);
+  }
 }
 
 /** Gemeinsame Verarbeitung nach dem Parsen einer CSV-Datei */
@@ -130,8 +126,3 @@ function applyFilters() {
 
 georegionSelect.addEventListener('change', applyFilters);
 valueCategorySelect.addEventListener('change', applyFilters);
-
-// Beim Start automatisch die mitgelieferte Beispieldatei laden
-window.addEventListener('DOMContentLoaded', () => {
-  loadCsvFromUrl('data/beispiel.csv');
-});

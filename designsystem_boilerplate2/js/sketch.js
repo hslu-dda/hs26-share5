@@ -8,10 +8,13 @@
  * ---------------------------------------------------------------
  */
 
-function setup() {
+async function setup() {
   const canvas = createCanvas(800, 400);
   canvas.parent('canvas-holder'); // Canvas in den <div id="canvas-holder"> einhängen
   noLoop(); // wir zeichnen neu, sobald neue/gefilterte Daten da sind
+
+  // Beim Start automatisch die mitgelieferte Beispieldatei laden (siehe data.js)
+  await loadCsvFromUrl('data/beispiel.csv');
 }
 
 function draw() {

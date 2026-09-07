@@ -1,0 +1,30 @@
+/**
+ * custom.postcss
+ * ---------------------------------------------------------------
+ * Hier kommen eure eigenen Styles rein – NICHT in den Dateien unter
+ * components/, foundations/, layouts/ usw. ändern, das sind
+ * unveränderte Designsystem-Quellen (leichter zu aktualisieren/
+ * vergleichen, wenn ihr nichts darin anpasst).
+ *
+ * @layer sorgt dafür, dass eure Regeln an der richtigen Stelle in
+ * der Kaskade landen (nach den Tailwind-/Designsystem-Basisstilen,
+ * aber respektiert weiterhin die übliche Layer-Reihenfolge
+ * base -> components -> utilities).
+ * ---------------------------------------------------------------
+ */
+
+@layer components {
+  /* z.B. eigene Komponente:
+  .my-hero {
+    @apply rounded-lg bg-primary-500 text-white p-6;
+  }
+  */
+}
+
+@layer utilities {
+  /* z.B. eigene Utility-Klasse:
+  .text-brand {
+    color: var(--color-primary-500);
+  }
+  */
+}

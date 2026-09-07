@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './js/**/*.js', '!./js/p5.min.js'],
+  content: ['./index.html'],
   corePlugins: {
     container: false,
   },
@@ -10,23 +10,6 @@ module.exports = {
     extend: {
       animation: {
         'spin-fast': 'spin 0.5s linear infinite',
-      },
-      // Beispiel: eigene Werte ergänzen, ohne das Designsystem-Theme
-      // darunter zu überschreiben. "brand" landet in der gemeinsamen
-      // Farbpalette (theme.colors) – da bg-/text-/border-/ring-/fill-/...
-      // alle standardmässig aus genau dieser Palette lesen, entstehen
-      // automatisch bg-brand-500, text-brand-500, border-brand-500, ...
-      colors: {
-        brand: {
-          500: '#0ea5e9',
-          600: '#0284c7',
-        },
-      },
-      spacing: {
-        128: '32rem',
-      },
-      borderRadius: {
-        '4xl': '2rem',
       },
     },
     screens: {

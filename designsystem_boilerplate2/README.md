@@ -30,14 +30,9 @@ scannt `index.html` und `js/**/*.js` nach benutzten Klassen — siehe
 `content` in `tailwind.config.js`).
 
 Parallel dazu braucht ihr einen **lokalen Webserver** für die Seite selbst
-(weil die CSV-Datei per `fetch()` nachgeladen wird):
-
-```bash
-python3 -m http.server 8000
-```
-→ [http://localhost:8000](http://localhost:8000)
-
-Oder Node: `npx serve .` — oder die VS-Code-Erweiterung "Live Server".
+(weil die CSV-Datei per `fetch()` nachgeladen wird) — nutzt dafür die
+VS-Code-Erweiterung "Live Server" (Rechtsklick auf `index.html` → "Open with
+Live Server").
 
 ## Struktur
 
@@ -54,7 +49,8 @@ dist/
   fonts/                  Schriftdateien (Noto Sans), statisch, nicht Teil
                          des Builds
 js/
-  data.js                Liest eine .csv-Datei ein (via PapaParse) und
+  p5.min.js               p5.js (lokal, Version 2.x)
+  data.js                Liest eine .csv-Datei ein (via d3) und
                          befüllt die Filter-Dropdowns
   sketch.js               p5.js-Sketch, zeichnet die gefilterte Zeitreihe
 assets/
@@ -72,8 +68,8 @@ Entweder:
 - über das Datei-Auswahlfeld auf der Seite die eigene `.csv`-Datei laden.
 
 Die **erste Zeile** wird als Spaltenüberschrift verwendet (Komma-getrennt).
-`data.js` verwendet [PapaParse](https://www.papaparse.com/) und wandelt jede
-Zeile in ein JavaScript-Objekt um, z.B.:
+`data.js` verwendet [d3](https://d3js.org/) (`d3.csv` / `d3.csvParse`) und
+wandelt jede Zeile in ein JavaScript-Objekt um, z.B.:
 
 ```js
 {
@@ -83,7 +79,7 @@ Zeile in ein JavaScript-Objekt um, z.B.:
   georegion: "CHFL",
   agegroup: "all",
   sex: "all",
-  value: 171,
+  value: "171", // d3 liefert Werte als String, bei Bedarf mit Number(...) umwandeln
   ...
 }
 ```

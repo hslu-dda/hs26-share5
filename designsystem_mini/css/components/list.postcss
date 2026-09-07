@@ -1,0 +1,67 @@
+/*----------------------------------------*\
+  LIST
+\*----------------------------------------*/
+
+.list {
+}
+
+.list--bare,
+main .list--bare {
+  @apply list-none pl-0;
+}
+
+.list--default,
+main ul:not([class]) {
+  @apply list-disc;
+  @apply list-outside pl-5;
+  @apply space-y-2;
+}
+
+.list--ordered,
+main ol:not([class]) {
+  @apply list-decimal;
+  @apply list-outside pl-5;
+  @apply space-y-2;
+}
+
+.list--default.list--indented {
+  li {
+    @apply ml-1.5;
+    @apply pl-3.5;
+  }
+}
+
+.list--roman {
+  @apply list-roman;
+  @apply list-outside pl-5;
+}
+
+.list--loose {
+  @apply space-y-3;
+}
+
+.list--negative {
+  @apply text-white;
+}
+
+.list--flex {
+  @apply flex;
+}
+
+.list--wrap {
+  @apply flex-wrap;
+}
+
+.list--icon {
+  @apply pl-0;
+
+  li {
+    @apply flex space-x-2;
+  }
+  .icon--xl {
+    @apply relative -top-1;
+  }
+  .icon--2xl {
+    @apply relative -top-2 lg:-top-3 3xl:-top-3.5;
+  }
+}
