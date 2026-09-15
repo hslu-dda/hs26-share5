@@ -1,0 +1,125 @@
+{
+  "metaVariables": {
+    "topic": "aids",
+    "source": "mandatory_reporting_system",
+    "publishingDate": "2026-09-02",
+    "sourceDate": "2026-09-01",
+    "publicationFrequency": {
+      "frequency": "monthly",
+      "frequencyDescription": "First Wednesday after day 1 of every month. The exact weekday can vary due to public holidays. Because of reporting delays, there is a gap of 6 months between the publication date and published data."
+    },
+    "expectedPublicationDelay": {
+      "delay": 180,
+      "unit": "days",
+      "delayDescription": "Because of reporting delays, there is a gap of at least 180 day(s) between the publication date and published data."
+    },
+    "valueCategory": {
+      "column": "valueCategory",
+      "columnDescription": "Defines what the property 'value' represents.",
+      "valueSet": ["cases"]
+    }
+  },
+  "temporalVariables": {
+    "column": "temporal",
+    "columnDescription": "Temporal information of the value specified in the property 'valueCategory'.",
+    "typeColumn": "temporal_type",
+    "typeColumnDescription": "Specifies the type of temporal value in the property 'temporal'.",
+    "typeValues": ["year"]
+  },
+  "groupingVariables": {
+    "georegion": {
+      "column": "georegion",
+      "columnDescription": "Geographical unit of the data record.",
+      "typeColumn": "georegion_type",
+      "typeColumnDescription": "Specifies the type of geographical unit in the property 'georegion'.",
+      "typeValues": {
+        "CHFL": {
+          "valueSet": "CHFL",
+          "allValue": "all"
+        }
+      }
+    },
+    "agegroup": {
+      "column": "agegroup",
+      "columnDescription": "Age range brackets used for grouping.",
+      "typeColumn": "agegroup_type",
+      "typeColumnDescription": "Specifies the type of agegroup in the property 'agegroup'.",
+      "typeValues": {
+        "agegroup_sti": {
+          "valueSet": [],
+          "allValue": "all"
+        }
+      }
+    },
+    "sex": {
+      "column": "sex",
+      "columnDescription": "Sex specification used for grouping.",
+      "valueSet": [],
+      "allValue": "all"
+    }
+  },
+  "valueVariables": {
+    "value": {
+      "description": "Represents the value defined by the property 'valueCategory' within the given temporal unit and grouping.",
+      "valueSetOrRange": [32, 104],
+      "nullValue": "NA",
+      "type": "double"
+    },
+    "valueMean3y": {
+      "description": "Right-aligned, rolling 3-year average of the property 'value' within the grouping described in the property name.",
+      "valueSetOrRange": [39.7, 82.3],
+      "nullValue": "NA",
+      "type": "double"
+    },
+    "pop": {
+      "description": "Population number within the given temporal unit and grouping.",
+      "valueSetOrRange": [8176573, 9091915],
+      "nullValue": "NA",
+      "type": "integer"
+    },
+    "incValue": {
+      "description": "Incidence value within the given temporal unit and grouping. Based on non-rounded figures of value and pop.",
+      "valueSetOrRange": [0.35, 1.27],
+      "nullValue": "NA",
+      "type": "double"
+    },
+    "deltaValue": {
+      "description": "Absolute difference in the metric 'value' comparing the current year to the last one.",
+      "valueSetOrRange": [-27, 7],
+      "nullValue": "NA",
+      "type": "double"
+    },
+    "deltaIncValue": {
+      "description": "Absolute difference in the metric 'incValue' comparing the current year to the last one.",
+      "valueSetOrRange": [-0.32, 0.08],
+      "nullValue": "NA",
+      "type": "double"
+    },
+    "incValuePrctChange": {
+      "description": "Percentage difference in the metric 'incValue' comparing the current year to the last one.",
+      "valueSetOrRange": [-37.3, 18.2],
+      "nullValue": "NA",
+      "type": "double"
+    },
+    "valueMean5y": {
+      "description": "Right-aligned, rolling 5-year average of the property 'value'.",
+      "valueSetOrRange": [40, 77.4],
+      "nullValue": "NA",
+      "type": "double"
+    }
+  },
+  "entryVariables": {
+    "dataComplete": {
+      "description": "Can data be assumed to be complete (few late reportings to be expected)?",
+      "valueSetOrRange": true,
+      "nullValue": "NA",
+      "type": "logical"
+    },
+    "trend": {
+      "description": "Indicates a trend of an entry with respect to previous entries. The trend is calculated using a poisson glm with a log-link with a right-aligned window of size 4 for the temporal_type year. For data by year the trend is adjusted by population size.",
+      "valueSetOrRange": ["falling", "stagnant"],
+      "nullValue": "NA",
+      "type": "character"
+    }
+  }
+}

@@ -38,6 +38,7 @@ async function setup() {
   cantonCodes = [...new Set(data.filter((d) => d.georegion_type === "canton").map((d) => d.georegion))].sort();
 
   // x-Skala: verteilt alle Kantone gleichmässig über die Canvas-Breite
+  // https://d3js.org/d3-scale/band
   xScale = d3.scaleBand().domain(cantonCodes).range([0, width]).padding(0.1);
 
   // Kleinsten und grössten value über alle Zeilen und Kantone finden.

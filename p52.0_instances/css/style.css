@@ -1,0 +1,29 @@
+:root {
+  --box-padding: 1rem;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 1.5rem;
+  background: #fafafa;
+}
+
+#reloadBtn {
+  margin: 1rem 0;
+  padding: var(--box-padding) 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.canvases {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.canvases > div {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: var(--box-padding);
+}
