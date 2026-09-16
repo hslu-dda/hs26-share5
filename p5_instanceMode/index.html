@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>instances</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/p5.min.js"></script>
+    <script src="Ball.js"></script>
+  </head>
+  <body>
+    <h1>✌️ Instances</h1>
+    <button id="button">Click me</button>
+
+    <div class="canvases">
+      <div id="canvas1"></div>
+      <div id="canvas2"></div>
+      <div id="canvas3"></div>
+    </div>
+
+    <script src="sketch.js"></script>
+    <script src="sketch2.js"></script>
+    <script src="sketch3.js"></script>
+
+    <script>
+      document.querySelector("#button").addEventListener("click", () => {
+        mySketch2.clicked();
+      });
+    </script>
+  </body>
+</html>

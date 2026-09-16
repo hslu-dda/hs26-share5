@@ -2,13 +2,19 @@
   --box-padding: 1rem;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
   padding: 1.5rem;
   background: #fafafa;
 }
 
-#reloadBtn {
+#button {
   margin: 1rem 0;
   padding: var(--box-padding) 1.2rem;
   font-size: 1rem;
