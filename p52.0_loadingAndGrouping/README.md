@@ -17,9 +17,7 @@ let groupedArray = [];
 
 - `chlamydiosis` – die komplette, ungefilterte CSV-Tabelle als Array von Objekten.
 - `cMonthlyCases` – nur die Zeilen mit `valueCategory === "cases"` und `temporal_type === "month"`.
-- `cYearly` – analog, aber für Jahreswerte. **Achtung:** im aktuellen Code filtert diese Zeile
-  fälschlicherweise nochmal nach `"month"` statt `"year"` – das ist ein Kopierfehler und sollte
-  `d.temporal_type === "year"` heissen.
+- `cYearly` – analog, aber für Jahreswerte.
 - `groupedArray` – das Endergebnis: ein Array mit einem Objekt pro Monat, das `cases`,
   `min_value_5y`, `median_value_5y` und `max_value_5y` gleichzeitig enthält.
 
