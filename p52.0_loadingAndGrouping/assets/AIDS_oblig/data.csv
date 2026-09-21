@@ -1,0 +1,14 @@
+valueCategory,temporal,temporal_type,georegion,georegion_type,agegroup,agegroup_type,sex,value,pop,incValue,valueMean3y,trend,deltaValue,deltaIncValue,incValuePrctChange,valueMean5y,dataComplete
+cases,2013,year,CHFL,CHFL,all,agegroup_sti,all,104,8176573,1.27,NA,NA,NA,NA,NA,NA,TRUE
+cases,2014,year,CHFL,CHFL,all,agegroup_sti,all,79,8274608,0.95,NA,NA,-25,-0.32,-25.2,NA,TRUE
+cases,2015,year,CHFL,CHFL,all,agegroup_sti,all,64,8362816,0.77,82.3,NA,-15,-0.18,-18.9,NA,TRUE
+cases,2016,year,CHFL,CHFL,all,agegroup_sti,all,69,8457360,0.82,70.7,falling,5,0.05,6.5,NA,TRUE
+cases,2017,year,CHFL,CHFL,all,agegroup_sti,all,71,8522244,0.83,68,stagnant,2,0.01,1.2,77.4,TRUE
+cases,2018,year,CHFL,CHFL,all,agegroup_sti,all,65,8582905,0.76,68.3,stagnant,-6,-0.07,-8.4,69.6,TRUE
+cases,2019,year,CHFL,CHFL,all,agegroup_sti,all,72,8644780,0.83,69.3,stagnant,7,0.07,9.2,68.2,TRUE
+cases,2020,year,CHFL,CHFL,all,agegroup_sti,all,45,8709355,0.52,60.7,falling,-27,-0.31,-37.3,64.4,TRUE
+cases,2021,year,CHFL,CHFL,all,agegroup_sti,all,41,8778099,0.47,52.7,falling,-4,-0.05,-9.6,58.8,TRUE
+cases,2022,year,CHFL,CHFL,all,agegroup_sti,all,40,8855062,0.45,42,falling,-1,-0.02,-4.3,52.6,TRUE
+cases,2023,year,CHFL,CHFL,all,agegroup_sti,all,40,9002273,0.44,40.3,stagnant,0,-0.01,-2.2,47.6,TRUE
+cases,2024,year,CHFL,CHFL,all,agegroup_sti,all,47,9091915,0.52,42.3,stagnant,7,0.08,18.2,42.6,TRUE
+cases,2025,year,CHFL,CHFL,all,agegroup_sti,all,32,9091915,0.35,39.7,stagnant,-15,-0.17,-32.7,40,TRUE

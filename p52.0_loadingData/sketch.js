@@ -1,5 +1,4 @@
 let data;
-let img;
 let datatable = [];
 let cantonCodes;
 let xScale;
@@ -37,24 +36,50 @@ async function setup() {
   // Alle Kantonskürzel (nur "canton", nicht "country" wie FL)
   cantonCodes = [...new Set(data.filter((d) => d.georegion_type === "canton").map((d) => d.georegion))].sort();
 
+  /* 
+  
+Die Zeile oben ist ev nicht so gut lesbar. Sie verint verschiedene Schritte in eine Zeile:
+Schritt 1: Nur die Zeilen behalten, die ein Kanton sind (keine Länder wie FL)
+let nurKantone = data.filter((d) => d.georegion_type === "canton");
+
+// Schritt 2: Aus jeder Zeile nur das Kantonskürzel rausziehen
+let alleKuerzel = nurKantone.map((d) => d.georegion);
+// alleKuerzel sieht jetzt ungefähr so aus: ["ZH", "BE", "ZH", "ZH", "LU", "BE", ...]
+// mit sehr vielen Wiederholungen, weil jeder Kanton pro Woche einmal vorkommt
+
+// Schritt 3: Ein Set aus diesem Array erstellen -> Duplikate verschwinden automatisch
+let kuerzelSet = new Set(alleKuerzel);
+// kuerzelSet enthält jetzt jedes Kürzel nur einmal, z.B. {ZH, BE, LU}
+// ist aber noch kein Array!
+
+// Schritt 4: Das Set zurück in ein Array umwandeln (mit dem Spread-Operator ...)
+let kuerzelArray = [...kuerzelSet];
+// kuerzelArray ist jetzt z.B. ["ZH", "BE", "LU"]
+
+// Schritt 5: Alphabetisch sortieren
+cantonCodes = kuerzelArray.sort();
+*/
+
   // x-Skala: verteilt alle Kantone gleichmässig über die Canvas-Breite
+  // https://d3js.org/d3-scale/band
   xScale = d3.scaleBand().domain(cantonCodes).range([0, width]).padding(0.1);
 
   // Kleinsten und grössten value über alle Zeilen und Kantone finden.
   // Wir sammeln zuerst alle Werte in einem einzigen Array ...
-  let allValues = [];
-  for (let row of datatable) {
-    for (let canton of cantonCodes) {
-      allValues.push(row[canton]);
-    }
-  }
-  // ... und lesen dann Minimum und Maximum daraus aus.
-  minValue = Math.min(...allValues);
-  maxValue = Math.max(...allValues);
+  // let allValues = [];
+  // for (let row of datatable) {
+  //   for (let canton of cantonCodes) {
+  //     allValues.push(row[canton]);
+  //   }
+  // }
+  // // ... und lesen dann Minimum und Maximum daraus aus.
+  // minValue = Math.min(...allValues);
+  // maxValue = Math.max(...allValues);
 
+  // eigentlich gibts genau dafür auch eine d3 Funktion:
+  minValue = d3.min(datatable, (row) => d3.min(cantonCodes, (canton) => row[canton]));
+  maxValue = d3.max(datatable, (row) => d3.max(cantonCodes, (canton) => row[canton]));
   console.log("Wertebereich:", minValue, "-", maxValue);
-
-  img = await loadImage("assets/pic.png");
 }
 
 function draw() {
