@@ -5,6 +5,12 @@
  * von JavaScript-Objekten um. Nutzt dafür d3 (window.d3, per
  * <script> in index.html eingebunden) – dieselben Funktionen wie
  * im Beispiel p52.0_loadingData (d3.csv / d3.csvParse).
+ * D3 Dokumentation: https://d3js.org/d3-scale/band
+ * https://d3js.org/d3-array/group 
+ * https://d3js.org/d3-fetch
+ * usw.
+ * 
+ * ---------------------------------------------------------------
  *
  * Ergebnis liegt danach in der globalen Variable `tableData`
  * (Array von Objekten, ein Objekt pro CSV-Zeile), z.B.:
