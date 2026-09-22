@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAGAPICALL</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/p5.min.js"></script>
+    <script src="js/d3.min.js"></script>
+  </head>
+  <body>
+    <h1>Borreliose</h1>
+
+    <!-- Siehe README, Teil 1 für die schrittweise Erklärung dieser
+         verschachtelten Struktur: section.spaced > .container > #outer >
+         #canvas-wrapper. Jede Ebene hat genau eine Aufgabe
+         (Abstand / Zentrierung / Rahmen+Schatten / Scroll-Ausschnitt). -->
+    <section class="spaced">
+      <div class="container">
+        <div id="outer">
+          <!-- p5 hängt sein <canvas> zur Laufzeit per canvas.parent()
+               hier hinein, siehe sketch.js -->
+          <div id="canvas-wrapper"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
