@@ -10,8 +10,12 @@
   </head>
   <body>
     <h1>✌️ Instances</h1>
-    <button id="button">Click me</button>
-
+    <section id="cockpit">
+      <button id="button" class="buttons">Click me</button>
+      <button id="button2" class="buttons">Click me too</button>
+      <input type="checkbox" id="checkboxInput" />
+      <label for="checkboxInput" class="toggleSwitch"> </label>
+    </section>
     <div class="canvases">
       <div id="canvas1"></div>
       <div id="canvas2"></div>
@@ -23,8 +27,16 @@
     <script src="sketch3.js"></script>
 
     <script>
-      document.querySelector("#button").addEventListener("click", () => {
+      document.querySelector("#button2").addEventListener("click", () => {
         mySketch2.clicked();
+      });
+      document.querySelector("#checkboxInput").addEventListener("change", (e) => {
+        if (e.target.checked) {
+          console.log(e.target);
+          mySketch1.loop();
+        } else {
+          mySketch1.noLoop();
+        }
       });
     </script>
   </body>

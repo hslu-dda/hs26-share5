@@ -14,4 +14,4 @@ function sketch3(p) {
     p.background(bgColor);
   };
 }
-new p5(sketch3, document.getElementById("canvas3"));
+const mySketch3 = new p5(sketch3, document.getElementById("canvas3"));
