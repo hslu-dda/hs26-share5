@@ -1,0 +1,19 @@
+{
+  "name": "bag-idd-proxy",
+  "version": "1.0.0",
+  "description": "Lokaler CORS-Proxy zur BAG IDD-API (nur für lokale Entwicklung)",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
