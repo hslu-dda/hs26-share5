@@ -100,6 +100,14 @@ Tipp: Lieber oft committen, mit kurzer, klarer Nachricht.
 git log --oneline
 ```
 
+**Einen Commit rückgängig machen** (die ID findest du mit `git log --oneline`):
+
+```bash
+git revert 4492880a # die nummer ist deine id
+```
+
+Das erstellt einen neuen Commit, der die Änderungen aufhebt. Nichts wird gelöscht, darum ist es auch sicher, wenn der Commit schon auf GitHub ist.
+
 **Eine Datei auf den letzten Commit zurücksetzen 💀:**
 
 ```bash
