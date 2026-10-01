@@ -10,7 +10,7 @@ Alle Beispiele laufen direkt im Browser:
 
 Die Übersichtsseite listet alle Ordner automatisch auf. Ein einzelnes Beispiel erreichst du unter `https://hslu-dda.github.io/hs26-share5/<ordnername>/`.
 
-## Lokal starten
+## Lokal starte n
 
 Repo klonen und den Ordner eines Beispiels mit einem lokalen Server öffnen, zum Beispiel mit der VS-Code-Erweiterung **Live Server**.
 
