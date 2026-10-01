@@ -8,7 +8,7 @@ function sketch(p) {
   };
 
   p.draw = function () {
-    p.background("#ff88888");
+    p.background("#ff88788");
     ball.update();
     ball.draw();
   };
