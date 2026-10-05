@@ -5,13 +5,21 @@ ausschliesslich auf dem Zusammenspiel von **Tailwind** und dem
 **Swiss Confederation Designsystem** für ein **responsives Layout**
 (`section`, `container`, `container--grid`, `grid--responsive-cols-*`).
 
+> **Hinweis:** Dieses Projekt nutzt bewusst **Tailwind CSS v3** (nicht v4),
+> weil die Vorlage [github.com/swiss/designsystem](https://github.com/swiss/designsystem)
+> selbst auf v3 basiert (JS-Config, `corePlugins`, `@screen`,
+> `theme('screens.*')`-Aufrufe, klassische `@import 'tailwindcss/base'` /
+> `components` / `utilities`-Struktur). Ein Wechsel auf v4 ist kein simpler
+> Versionsbump, da v4 u.a. `corePlugins` entfernt hat, JS-Configs nicht mehr
+> automatisch erkennt und die Import-/Layer-Mechanik grundlegend geändert hat.
+
 Siehe auch die offizielle Doku:
 [HTML Structure](https://swiss.github.io/designsystem/?path=/docs/doc-for-developers-html-structure--docs) /
 [Layouts – General](https://swiss.github.io/designsystem/?path=/docs/layouts-general--docs).
 
 ## Setup (einmalig)
 
-Voraussetzung: [Node.js](https://nodejs.org/) (LTS-Version reicht).
+Voraussetzung: [Node.js](https://nodejs.org/).
 
 ```bash
 npm install

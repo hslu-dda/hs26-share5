@@ -47,6 +47,7 @@ async function setup() {
       }),
     });
     data = await response.json();
+    //console.log("API-Antwort:", data);
 
     // data.values
     // {x: 201301, y: 3.63, properties: {...}} -Objekten. x kodiert

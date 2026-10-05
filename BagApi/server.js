@@ -40,6 +40,7 @@ app.all("/api/idd/*", async (req, res) => {
     });
 
     const data = await response.json();
+
     res.status(response.status).json(data);
   } catch (error) {
     console.error(error);
