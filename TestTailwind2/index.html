@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/main.css">
+</head>
+<body>
+
+    <header class="flex items-center justify-between bg-swiss-dark-600 px-6 py-4 text-white">
+  <div class="flex items-center gap-3">
+    <span class="flex h-8 w-8 items-center justify-center rounded-swiss bg-swiss-red-600 text-sm font-bold">CH</span>
+    <span class="font-bold">Mein Projekt</span>
+  </div>
+  <nav class="hidden gap-6 text-sm sm:flex">
+    <a href="#" class="hover:text-swiss-red-100">Start</a>
+  </nav>
+</header>
+   <button id="button"
+  class="inline-flex items-center rounded-swiss bg-swiss-red-600 px-4 py-2
+         text-sm font-bold text-white shadow-sm transition-colors
+         hover:bg-swiss-red-700 active:bg-swiss-red-800
+         focus:outline-none focus:ring-2 focus:ring-swiss-red-500 focus:ring-offset-2">
+  Click me
+</button>
+
+<input type="checkbox" id="checkboxInput" class="peer hidden" />
+<label for="checkboxInput"
+  class="relative flex h-7 w-12 cursor-pointer items-center rounded-full
+         bg-gray-400 transition-colors duration-200 peer-checked:bg-swiss-red-600
+         after:absolute after:left-1 after:h-4 after:w-4 after:rounded-full
+         after:bg-white after:shadow after:transition-transform after:duration-200
+         peer-checked:after:translate-x-5">
+</label>
+
+    <section class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-6">
+        <div id="canvas1" class="rounded-swiss border border-gray-200 bg-white p-4 shadow-sm"></div>
+  <div id="canvas2" class="rounded-swiss border border-gray-200 bg-white p-4 shadow-sm"></div>
+  <div id="canvas3" class="rounded-swiss border border-gray-200 bg-white p-4 shadow-sm"></div>
+    </section>
+
+
+   
+    <script src="js/p5.min.js"></script>
+    <script src="js/Ball.js"></script>
+    <script src="js/sketch.js"></script>
+    <script src="js/sketch2.js"></script>
+    <script src="js/sketch3.js"></script>
+
+    <script>
+        document.querySelector("#button2").addEventListener("click", () => {
+            mySketch2.clicked();
+        });
+        document.querySelector("#checkboxInput").addEventListener("change", (e) => {
+            if (e.target.checked) {
+                mySketch1.loop();
+            } else {
+                mySketch1.noLoop();
+            }
+        });
+    
+    </script>
+</body>
+</html>
